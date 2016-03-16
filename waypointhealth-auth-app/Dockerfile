@@ -1,6 +1,6 @@
 FROM torukmnk/ruby-mongo
 
-RUN mkdir /waypointhealth_autu
+RUN mkdir /waypointhealth_auth
 WORKDIR /waypointhealth_auth
 ADD . /waypointhealth_auth
 
