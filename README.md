@@ -26,3 +26,6 @@ Based from Ubuntu Docker custom image [torukmnk/ruby-mongo](https://hub.docker.c
  * [Mongo](https://hub.docker.com/_/mongo/)
  * [Redis](https://hub.docker.com/_/redis/)
 
+# Reference
+ * [Narciso Guillen](https://github.com/narcisoguillen) docker-compose file on [docker-dev-jov](https://github.com/narcisoguillen/docker-dev-jobs)
+ * [Docker](https://docs.docker.com/) documentation.
