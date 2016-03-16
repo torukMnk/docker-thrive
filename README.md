@@ -5,8 +5,6 @@ Create a github token with repo scope [here](https://github.com/settings/tokens)
 
 Based from Ubuntu Docker custom image [torukmnk/ruby-mongo](https://hub.docker.com/r/torukmnk/ruby-mongo/)
 
-
-
 ## Image
 
  * RVM 1.26.11
@@ -15,13 +13,13 @@ Based from Ubuntu Docker custom image [torukmnk/ruby-mongo](https://hub.docker.c
  * Nodejs v0.10.25
  * Git 1.9.1
 
-## Thrive research Virtual CI and fast development environment setup
+## Virtual CI and fast development environment setup
  * Volumes
  * Links
  * Ports
  * Expose
  * Depends_on
- * Extr Host
+ * Extra Host
 
 ## Containers
 
