@@ -1,0 +1,57 @@
+version: '2'
+
+services:
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    expose:
+      - "6379"
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    expose:
+      - "27017"
+    depends_on:
+      - redis
+
+  waypointhealth_auth:
+    build: ./waypointhealth-auth-app
+    environment:
+      - RAILS_ENV=development
+      - MONGODB_HOST="192.168.99.100:27017"
+    command: bash -l -c "rake db:drop; rake db:seed; rails s -p 3000 -b 0.0.0.0"
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+    volumes:
+      - ./waypointhealth-auth-app:/waypointhealth_auth
+    links:
+      - db
+      - redis
+      - waypointhealth_main
+    extra_hosts:
+      - "btsteps.dev:192.168.99.100"
+
+  waypointhealth_main:
+    build: ./waypointhealth-main-app
+    environment:
+      - RAILS_ENV=development
+      - MONGODB_HOST="192.168.99.100:27017"
+    command: bash -l -c "sleep 2; rake db:drop; mongorestore -h 192.168.99.100:27017 --db thrive_development mongodb-last; rake db:seed; rails s -p 3001 -b 0.0.0.0"
+    ports:
+      - "3001:3001"
+    expose:
+      - "3001"
+    volumes:
+      - ./waypointhealth-main-app:/waypointhealth_main
+    links:
+      - db
+      - redis
+    extra_hosts:
+      - "btsteps.dev:192.168.99.100"
+
