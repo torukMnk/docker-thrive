@@ -5,7 +5,7 @@ Create a github token with repo scope [here](https://github.com/settings/tokens)
 
 Based from Ubuntu Docker custom image [torukmnk/ruby-mongo](https://hub.docker.com/r/torukmnk/ruby-mongo/)
 
-Thrive research Virtual CI and fast development environment setup
+
 
 ## Image
 
@@ -14,6 +14,14 @@ Thrive research Virtual CI and fast development environment setup
  * MongoDB shell version: 3.2.4 - mongorestore -h [Docker Container] --db db_name path
  * Nodejs v0.10.25
  * Git 1.9.1
+
+## Thrive research Virtual CI and fast development environment setup
+ * Volumes
+ * Links
+ * Ports
+ * Expose
+ * Depends_on
+ * Extr Host
 
 ## Containers
 
